@@ -1,0 +1,11 @@
+---
+ja:
+  view:
+    confirm: 本当に実行しますか？
+    show: 詳細
+    edit: 編集
+    destroy: 削除
+    move_up: 一つ上へ
+    move_down: 一つ下へ
+    move_top: 一番上へ
+    move_bottom: 一番下へ

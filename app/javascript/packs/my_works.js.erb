@@ -1,0 +1,50 @@
+import FieldMover from './modules/field_mover';
+import cocoonAddLimit from './modules/cocoon_add_limit';
+
+// TODO:型を書くべき？
+document.addEventListener('turbolinks:load', function () {
+  //作品画像のcocoon設定
+  (function () {
+    // フィールドを上下入れ替えする
+    const jsWorkImages = document.querySelector('.js-work-images');
+    if(!jsWorkImages) {
+      return;
+    }
+
+    const fieldMover = new FieldMover(jsWorkImages);
+
+    $(jsWorkImages).on('cocoon:after-insert', function (event, added_task) {
+      fieldMover.removeButtonListener();
+      fieldMover.addButtonListener();
+      fieldMover.resetPosition();
+    });
+    fieldMover.addButtonListener();
+    fieldMover.resetPosition();
+
+    // フィールドの入力数制限
+    cocoonAddLimit(jsWorkImages, <%= Work::IMAGE_LIMIT %>);
+  })();
+
+
+  // 作品リンクのcocoon設定
+  (function () {
+    // フィールドを上下入れ替えする
+    const jsWorkLinks = document.querySelector('.js-work-links');
+    if(!jsWorkLinks) {
+      return;
+    }
+
+    const fieldMover = new FieldMover(jsWorkLinks);
+
+    $(jsWorkLinks).on('cocoon:after-insert', function (event, added_task) {
+      fieldMover.removeButtonListener();
+      fieldMover.addButtonListener();
+      fieldMover.resetPosition();
+    });
+    fieldMover.addButtonListener();
+    fieldMover.resetPosition();
+
+    // フィールドの入力数制限
+    cocoonAddLimit(jsWorkLinks, <%= Work::LINK_LIMIT %>);
+  })();
+});

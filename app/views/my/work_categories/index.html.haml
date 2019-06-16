@@ -1,0 +1,24 @@
+%h1 作品カテゴリ一覧
+
+.form-actions
+  = link_to '作品カテゴリを追加', new_my_work_category_path, class: 'btn btn-primary'
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th= t_model_attr('work_category.name')
+      %th
+
+  %tbody
+    - @work_categories.each do |work_category|
+      %tr
+        %td= work_category.name
+        %td
+          .btns
+            = link_to t('view.edit'), edit_my_work_category_path(work_category), class: 'btn btn-primary'
+            = link_to t('view.destroy'), [:my, work_category], method: :delete, data: { confirm: t('view.confirm') }, class: 'btn btn-danger'
+          .btns.mt-3
+            = link_to t('view.move_up'), move_up_my_work_category_path(work_category), method: :put, class: 'btn btn-primary btn-sm'
+            = link_to t('view.move_down'), move_down_my_work_category_path(work_category), method: :put, class: 'btn btn-primary btn-sm'
+            = link_to t('view.move_top'), move_top_my_work_category_path(work_category), method: :put, data: { confirm: t('view.confirm') }, class: 'btn btn-primary btn-sm'
+            = link_to t('view.move_bottom'), move_bottom_my_work_category_path(work_category), method: :put, data: { confirm: t('view.confirm') }, class: 'btn btn-primary btn-sm'

@@ -1,0 +1,13 @@
+.form-inputs.nested-fields
+  .form-inputs
+    = f.input :link_url
+
+  .form-inputs
+    = f.input :link_text
+
+  = f.input :position, as: :hidden, input_html: { class: 'js-position' }
+
+  .form-actions
+    = link_to_remove_association '削除', f
+    = link_to '一つ上へ', '#', class: 'btn btn-outline-primary btn-sm js-up'
+    = link_to '一つ下へ', '#', class: 'btn btn-outline-primary btn-sm js-down'

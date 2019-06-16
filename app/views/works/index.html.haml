@@ -1,0 +1,13 @@
+%h1 作品一覧
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th= t_model_attr('work.title')
+      %th
+
+  %tbody
+    - @works.each do |work|
+      %tr
+        %td= work.title
+        %td= link_to t('view.show'), work, class: 'btn btn-primary'

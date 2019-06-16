@@ -1,0 +1,30 @@
+-# frozen_string_literal: true
+= simple_form_for([:my, @work]) do |f|
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+  .form-inputs
+    = f.input :title
+
+  .form-inputs
+    = f.input :description
+
+  .form-inputs
+    = f.input :work_category_id, as: :select, collection: current_user.work_categories.order(position: :asc), include_blank: '選択してください'
+
+  .js-work-images
+    = f.simple_fields_for :work_images, f.object.work_images.sort { |a, b| a.position <=> b.position } do |work_image|
+      = render 'work_image_fields', f: work_image
+
+    .form-inputs
+      = link_to_add_association '画像を追加', f, :work_images
+
+  .js-work-links
+    = f.simple_fields_for :work_links, f.object.work_links.sort { |a, b| a.position <=> b.position } do |work_link|
+      = render 'work_link_fields', f: work_link
+
+    .form-inputs
+      = link_to_add_association 'リンクを追加', f, :work_links
+
+  .form-actions
+    = f.button :submit

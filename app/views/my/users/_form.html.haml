@@ -1,0 +1,49 @@
+-# frozen_string_literal: true
+= simple_form_for([:my, @user], url: my_user_path) do |f|
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+  .form-inputs
+    = f.input :skill_list, input_html: {value: f.object.skill_list.join(',') ,data: { ajax: "#{tags_path}.json" } }
+
+  .form-inputs
+    = f.input :name
+
+  .form-inputs
+    = f.input :pr
+
+  .form-inputs
+    = f.input :prefecture_id, as: :select, collection: Prefecture.order(id: :asc), include_blank: '選択してください'
+
+  .form-inputs
+    = f.input :activity_id, as: :grouped_select, collection: grouped_select_activities, group_method: :last, include_blank: '選択してください'
+
+  %h2 お仕事募集
+
+  .js-enabled-accordion
+    .form-inputs
+      = f.input :job_enabled, input_html: { class: 'js-enabled' }
+
+    .js-accordion
+      .form-inputs
+        = f.input :job_pr
+
+      .form-inputs
+        = f.input :job_flow
+
+      .form-inputs
+        = f.input :job_note
+
+  %h2 連絡用メールアドレス
+
+  .form-inputs
+    = f.input :contact_email
+
+  .form-inputs
+    = f.input :contact_email_job
+
+  .form-inputs
+    = f.input :contact_email_gift
+
+  .form-actions
+    = f.button :submit

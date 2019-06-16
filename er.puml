@@ -1,0 +1,86 @@
+@startuml
+
+entity "user" {
+  email
+  password
+  admin
+  name
+  pr
+  job_pr
+  job_flow
+  job_note
+  job_enabled
+  contact_email
+  contact_email_job
+  contact_email_gift
+}
+
+entity "work" {
+  title
+  description
+  position
+}
+
+entity "work_image" {
+  image
+  position
+}
+
+entity "work_link" {
+  link_text
+  link_url
+}
+
+entity "work_category" {
+  name
+  position
+}
+
+entity "prefectures" {
+  name
+}
+
+entity "theme" {
+  name
+  template
+}
+
+entity "theme_setting" {
+  header_image
+}
+
+entity "activity" {
+  name
+  position
+}
+
+entity "activity_category" {
+  name
+  position
+}
+
+entity "website" {
+  link_text
+  link_url
+}
+
+entity "tag" {
+  name
+}
+
+theme--{theme_setting
+user--{theme_setting
+prefectures--{user
+user--{work
+work--{work_link
+work--{work_image
+work_category--{work
+user--{tagging
+tag--{tagging
+work--{tagging
+user--{website
+activity--{user
+activity_category--{activity
+user--{work_category
+
+@enduml

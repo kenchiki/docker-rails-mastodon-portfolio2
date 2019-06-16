@@ -1,0 +1,74 @@
+{
+  "application.js": "/packs/js/application-113596e6f3299a1e8350.js",
+  "application.js.map": "/packs/js/application-113596e6f3299a1e8350.js.map",
+  "entrypoints": {
+    "application": {
+      "js": [
+        "/packs/js/application-113596e6f3299a1e8350.js"
+      ],
+      "js.map": [
+        "/packs/js/application-113596e6f3299a1e8350.js.map"
+      ]
+    },
+    "modules/cocoon_add_limit": {
+      "js": [
+        "/packs/js/modules/cocoon_add_limit-f4d54bd56c755d405a96.js"
+      ],
+      "js.map": [
+        "/packs/js/modules/cocoon_add_limit-f4d54bd56c755d405a96.js.map"
+      ]
+    },
+    "modules/enabled_accordion": {
+      "js": [
+        "/packs/js/modules/enabled_accordion-4cdd6d5a09f6a42431cc.js"
+      ],
+      "js.map": [
+        "/packs/js/modules/enabled_accordion-4cdd6d5a09f6a42431cc.js.map"
+      ]
+    },
+    "modules/field_mover": {
+      "js": [
+        "/packs/js/modules/field_mover-b433c4ec3ff056a4dbd3.js"
+      ],
+      "js.map": [
+        "/packs/js/modules/field_mover-b433c4ec3ff056a4dbd3.js.map"
+      ]
+    },
+    "modules/flip": {
+      "js": [
+        "/packs/js/modules/flip-301b91c793374c3a384a.js"
+      ],
+      "js.map": [
+        "/packs/js/modules/flip-301b91c793374c3a384a.js.map"
+      ]
+    },
+    "my_user": {
+      "js": [
+        "/packs/js/my_user-95e7cf2e23f433608384.js"
+      ],
+      "js.map": [
+        "/packs/js/my_user-95e7cf2e23f433608384.js.map"
+      ]
+    },
+    "my_works": {
+      "js": [
+        "/packs/js/my_works-febe3060eb7921cca571.js"
+      ],
+      "js.map": [
+        "/packs/js/my_works-febe3060eb7921cca571.js.map"
+      ]
+    }
+  },
+  "modules/cocoon_add_limit.js": "/packs/js/modules/cocoon_add_limit-f4d54bd56c755d405a96.js",
+  "modules/cocoon_add_limit.js.map": "/packs/js/modules/cocoon_add_limit-f4d54bd56c755d405a96.js.map",
+  "modules/enabled_accordion.js": "/packs/js/modules/enabled_accordion-4cdd6d5a09f6a42431cc.js",
+  "modules/enabled_accordion.js.map": "/packs/js/modules/enabled_accordion-4cdd6d5a09f6a42431cc.js.map",
+  "modules/field_mover.js": "/packs/js/modules/field_mover-b433c4ec3ff056a4dbd3.js",
+  "modules/field_mover.js.map": "/packs/js/modules/field_mover-b433c4ec3ff056a4dbd3.js.map",
+  "modules/flip.js": "/packs/js/modules/flip-301b91c793374c3a384a.js",
+  "modules/flip.js.map": "/packs/js/modules/flip-301b91c793374c3a384a.js.map",
+  "my_user.js": "/packs/js/my_user-95e7cf2e23f433608384.js",
+  "my_user.js.map": "/packs/js/my_user-95e7cf2e23f433608384.js.map",
+  "my_works.js": "/packs/js/my_works-febe3060eb7921cca571.js",
+  "my_works.js.map": "/packs/js/my_works-febe3060eb7921cca571.js.map"
+}

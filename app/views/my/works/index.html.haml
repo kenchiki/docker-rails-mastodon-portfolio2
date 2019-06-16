@@ -1,0 +1,20 @@
+%h1 作品一覧
+
+.form-actions
+  = link_to '作品を追加', new_my_work_path, class: 'btn btn-primary'
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th= t_model_attr('work.title')
+      %th
+
+  %tbody
+    - @works.each do |work|
+      %tr
+        %td= work.title
+        %td
+          .btns
+            = link_to t('view.show'), [:my, work], class: 'btn btn-primary'
+            = link_to t('view.edit'), edit_my_work_path(work), class: 'btn btn-primary'
+            = link_to t('view.destroy'), [:my, work], method: :delete, data: { confirm: t('view.confirm') }, class: 'btn btn-danger'

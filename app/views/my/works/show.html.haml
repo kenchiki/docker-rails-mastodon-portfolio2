@@ -1,0 +1,13 @@
+%h1 作品詳細
+
+%table.table.table-striped
+  %tbody
+    %tr
+      %th.w-25= t_model_attr('work.title')
+      %td= @work.title
+    %tr
+      %th= t_model_attr('work.description')
+      %td= simple_format(@work.description)
+
+.form-actions
+  = link_to '一覧', my_works_path,class: 'btn btn-primary'
