@@ -10,6 +10,12 @@ docker-compose build
 
 # bundle install永続化するとすごく遅くなるのではDockerfileで行う（他のコマンドは比較的早いので下記で実行）
 # railsはコンテナ名
-docker-compose run --rm rails yarn install
-docker-compose run --rm rails rake db:setup
+docker-compose run --rm web yarn install
+docker-compose run --rm web rake db:setup
+```
+
+# 新たにnode_module追加したい場合
+
+```sh
+docker-compose run --rm web yarn add vue
 ```

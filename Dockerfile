@@ -24,13 +24,13 @@ RUN apt-get update
 RUN apt-get install -y yarn
 
 # bundle install
-WORKDIR /tmp
+RUN mkdir /rails-app
+WORKDIR /rails-app
 RUN gem install bundler
-RUN gem install debase
-RUN gem install ruby-debug-ide
+RUN gem install debase -v "0.2.3.beta5"
+RUN gem install ruby-debug-ide -v "0.7.0.beta7"
 ADD ./Gemfile Gemfile
 ADD ./Gemfile.lock Gemfile.lock
 RUN bundle install
 
-WORKDIR /rails-app
 ADD ./ /rails-app
